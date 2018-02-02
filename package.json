@@ -21,8 +21,9 @@
   "main": "index.html",
   "scripts": {
     "dev": "live-server",
-    "test": "parallelshell \"http-server -p 11822 --silent\" \"casperjs test test.js --engine=slimerjs\"",
-    "test-verbose": "parallelshell \"http-server -p 11822\" \"casperjs test test.js --engine=slimerjs --verbose --log-level=debug\""
+    "test": "echo 'Hello World'",
+    "test-parallel-shell": "parallelshell \"http-server -p 11822 --silent\" \"casperjs test test.js --engine=slimerjs\"",
+    "test-parallel-shell-verbose": "parallelshell \"http-server -p 11822\" \"casperjs test test.js --engine=slimerjs --verbose --log-level=debug\""
   },
   "window": {
     "icon": "images/icons/48.png",
