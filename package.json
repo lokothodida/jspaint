@@ -20,7 +20,6 @@
   ],
   "main": "index.html",
   "scripts": {
-    "start": "nw",
     "dev": "live-server",
     "test": "parallelshell \"http-server -p 11822 --silent\" \"casperjs test test.js --engine=slimerjs\"",
     "test-verbose": "parallelshell \"http-server -p 11822\" \"casperjs test test.js --engine=slimerjs --verbose --log-level=debug\""
@@ -43,7 +42,6 @@
     "cross-spawn": "^5.1.0",
     "http-server": "^0.11.1",
     "live-server": "^1.2.0",
-    "parallelshell": "^3.0.2",
-    "phantomcss": "^1.4.0"
+    "parallelshell": "^3.0.2"
   }
 }
