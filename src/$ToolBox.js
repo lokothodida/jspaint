@@ -1,5 +1,5 @@
 
-function $ToolBox(){
+function $ToolBox($top, $bottom, $left, $right){
 	var $tb = $(E("div")).addClass("tool-box");
 	var $tools = $(E("div")).addClass("tools");
 	var $tool_options = $(E("div")).addClass("tool-options");
@@ -62,7 +62,7 @@ function $ToolBox(){
 		return $b[0];
 	}));
 	
-	var $c = $Component("Tools", "tall", $tools.add($tool_options));
+	var $c = $Component("Tools", "tall", $tools.add($tool_options), $top, $bottom, $left, $right);
 	$c.update_selected_tool = function(){
 		$buttons.removeClass("selected");
 		selected_tool.$button.addClass("selected");

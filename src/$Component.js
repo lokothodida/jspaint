@@ -1,5 +1,15 @@
+(function({
+	// lib/jquery.min.js
+	$,
+	// src/create-element.js
+	E,
+	// src/$Window.js
+	$Window,
+	// src/helpers.js
+	$G
+}, exports) {
 
-function $Component(name, orientation, $el){
+function $Component(name, orientation, $el, $top, $bottom, $left, $right){
 	// A draggable widget that can be undocked into a window
 	var $c = $(E("div")).addClass("component");
 	$c.addClass(""+name+"-component");
@@ -207,3 +217,7 @@ function $Component(name, orientation, $el){
 	
 	return $c;
 }
+
+exports.$Component = $Component;
+
+})(window, window);
