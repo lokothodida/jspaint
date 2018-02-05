@@ -37,10 +37,6 @@ function Cursor(cursor_def){
 		", " + cursor_def[2];
 }
 
-function E(t){
-	return document.createElement(t);
-}
-
 function get_rgba_from_color(color){
 	var single_pixel_canvas = new Canvas(1, 1);
 	

@@ -307,31 +307,6 @@ function are_you_sure(action, canceled){
 	}
 }
 
-function show_error_message(message, error){
-	var $w = $FormWindow().title("Error").addClass("dialogue-window");
-	$w.$main.text(message);
-	$w.$main.css("max-width", "600px");
-	if(error){
-		$(E("pre"))
-		.appendTo($w.$main)
-		.text(error.stack || error.toString())
-		.css({
-			background: "white",
-			color: "#333",
-			// background: "#A00",
-			// color: "white",
-			fontFamily: "monospace",
-			width: "500px",
-			overflow: "auto",
-		});
-	}
-	$w.$Button("OK", function(){
-		$w.close();
-	});
-	$w.center();
-	console.error(message, error);
-}
-
 // TODO: close are_you_sure windows and these Error windows when switching sessions
 // because it can get pretty confusing
 function show_resource_load_error_message(){
