@@ -1,5 +1,11 @@
-(function() {
-	/* global window, document, $ */
+(function({
+	localStorage,
+	// src/show-error-message.js
+	show_error_message,
+	// lib/jquery.min.js
+	$
+}, exports) {
+
 	/** @todo: refactor localStorage to use the src/storage.js module */
 	var default_theme = "classic.css";
 	var theme_storage_key = "jspaint theme";
@@ -8,15 +14,9 @@
 	var theme_style = create_element("style", {});
 
 	load_initial_theme_into_head();
-	export_methods_to_window();
 
 	function load_initial_theme_into_head() {
 		document.head.appendChild(theme_link);
-	}
-
-	function export_methods_to_window() {
-		window.set_theme = set_theme;
-		window.get_theme = get_theme;
 	}
 
 	/**
@@ -137,7 +137,10 @@
 		theme_style.textContent = css_content;
 
 		document.head.appendChild(theme_style);
-
 		$(window).triggerHandler("theme-load");
 	}
-})();
+
+	exports.set_theme = set_theme;
+	exports.get_theme = get_theme;
+
+})(window, window);
