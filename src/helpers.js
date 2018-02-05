@@ -1,3 +1,11 @@
+(function({
+	// lib/jquery.min.js
+	$,
+	// lib/font-detective.js
+	FontDetective,
+	// src/create-element.js
+	E
+}, exports) {
 
 // make jQuery play well with PEP
 $.event.props.push("button", "buttons", "clientX", "clientY", "offsetX", "offsetY", "pageX", "pageY", "screenX", "screenY", "toElement");
@@ -5,7 +13,6 @@ $.event.props.push("pointerType", "pointerId", "width", "height", "pressure", "t
 
 // configure Font Detective
 FontDetective.swf = "./lib/FontList.swf";
-
 
 var TAU =     //////|//////
           /////     |     /////
@@ -92,3 +99,11 @@ function Canvas(width, height){
 	
 	return new_canvas;
 }
+
+exports.TAU = TAU;
+exports.$G = $G;
+exports.Cursor = Cursor;
+exports.get_rgba_from_color = get_rgba_from_color;
+exports.Canvas = Canvas;
+
+})(window, window);
