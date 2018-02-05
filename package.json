@@ -20,17 +20,19 @@
   ],
   "main": "index.html",
   "scripts": {
-    "start": "nw",
     "dev": "live-server",
-    "test": "parallelshell \"http-server -p 11822 --silent\" \"casperjs test test.js --engine=slimerjs\"",
-    "test-verbose": "parallelshell \"http-server -p 11822\" \"casperjs test test.js --engine=slimerjs --verbose --log-level=debug\""
+    "test": "echo 'Working tests need to be added'",
+    "phantomjs-env-var": "export PHANTOMJS_EXECUTABLE=./node_modules/.bin/phantomjs",
+    "http-server": "http-server -p 11822 --silent",
+    "test-casperjs": "casperjs test test.js --engine=phantomjs",
+    "test-parallel-shell": "npm run phantomjs-env-var && parallelshell \"npm run http-server\" \"npm run test-casperjs\"",
+    "test-parallel-shell-verbose": "parallelshell \"npm run http-server\" \"casperjs test test.js --verbose --log-level=debug\""
   },
   "window": {
     "icon": "images/icons/48.png",
     "toolbar": false
   },
   "dependencies": {
-    "nw": "^0.27.4",
     "wallpaper": "^2.6.0"
   },
   "repository": {
@@ -41,10 +43,11 @@
     "url": "http://github.com/1j01/jspaint/issues"
   },
   "devDependencies": {
+    "casperjs": "^1.1.4",
     "cross-spawn": "^5.1.0",
     "http-server": "^0.11.1",
     "live-server": "^1.2.0",
     "parallelshell": "^3.0.2",
-    "phantomcss": "^1.4.0"
+    "phantomjs": "^2.1.7"
   }
 }
