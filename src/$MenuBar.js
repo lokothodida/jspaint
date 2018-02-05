@@ -1,11 +1,16 @@
+(function({
+	localStorage,
+	// lib/jquery.min.js
+	$,
+	// src/helpers.js
+	$G,
+	// src/create-element.js
+	E
+}, exports) {
 
 $MenuBar.DIVIDER = "DIVIDER";
 
 function $MenuBar(menus){
-	
-	var $ = jQuery;
-	var $G = $(self);
-	
 	var $menus = $(E("div")).addClass("menus");
 	
 	$menus.attr("touch-action", "none");
@@ -299,5 +304,8 @@ function $MenuBar(menus){
 	});
 	
 	return $menus;
-
 }
+
+exports.$MenuBar = $MenuBar;
+
+})(window, window);
