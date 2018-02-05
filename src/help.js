@@ -1,3 +1,11 @@
+(function({
+	// lib/jquery.min.js
+	$,
+	// src/$Window.js
+	$Window,
+	// src/helpers.js
+	E
+}, exports) {
 
 var $help_window;
 
@@ -10,8 +18,8 @@ function show_help(){
 	// $toolbar = $(E("div")).addClass("toolbar");
 	// $help_window.$content.append($toolbar);
 	
-	$iframe = $(E("iframe"));
-	$contents = $(E("ul")).addClass("contents");
+	var $iframe = $(E("iframe"));
+	var $contents = $(E("ul")).addClass("contents");
 	$help_window.$content.append($contents, $iframe);
 	$help_window.$content.css({width: 800, height: 600});
 	$iframe.attr({name: "help-frame", src: "help/default.html"});
@@ -86,3 +94,7 @@ function show_help(){
 	// 	}
 	// });
 }
+
+exports.show_help = show_help;
+
+})(window, window);
