@@ -84,8 +84,8 @@ $status_text.default = function(){
 };
 $status_text.default();
 
-var $toolbox = $ToolBox();
-var $colorbox = $ColorBox();
+var $toolbox = $ToolBox($top, $bottom, $left, $right);
+var $colorbox = $ColorBox($top, $bottom, $left, $right);
 
 if(window.file_entry){
 	open_from_FileEntry(window.file_entry);

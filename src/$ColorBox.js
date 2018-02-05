@@ -32,7 +32,7 @@ function $Swatch(color){
 	return $b;
 }
 
-function $ColorBox(){
+function $ColorBox($top, $bottom, $left, $right){
 	var $cb = $(E("div")).addClass("color-box");
 	
 	var $current_colors = $Swatch().addClass("current-colors");
@@ -153,7 +153,7 @@ function $ColorBox(){
 	};
 	build_palette();
 	
-	var $c = $Component("Colors", "wide", $cb);
+	var $c = $Component("Colors", "wide", $cb, $top, $bottom, $left, $right);
 	
 	$c.edit_last_color = function(){
 		// Edit the last color cell that's been selected as the foreground color.
